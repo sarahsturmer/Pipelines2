@@ -41,13 +41,15 @@ jobs:
   lint:
     runs-on: windows-latest
     steps: 
+    - uses: actions/checkout@v3
     - name: RunLint
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: echo LINT
+      run: echo LINTING
   
   test:
-    runs-on: windows-latest
     needs: [build, lint]
+    runs-on: windows-latest
+    steps:
     - name: Test
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: echo TEST
