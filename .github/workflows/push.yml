@@ -67,4 +67,4 @@ jobs:
     - name: RunTests
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: VSTest.Console.exe
-           Release\UnitTest1.dll
+           x64\Release\UnitTest1.dll
